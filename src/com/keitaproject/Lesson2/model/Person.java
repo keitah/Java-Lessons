@@ -1,34 +1,47 @@
 package com.keitaproject.Lesson2.model;
 public class Person {
-    private int id;
-    private String name;
+    private final int id;
+    private String firstName;
+    private String middleName;
+    private String lastName;
     private int age;
-    public Person(int id, String name, int age) {
+    private String dateOfBirth;
+    public Person(int id, String firstName, String lastName, String middleName, int age, String dateOfBirth) {
         this.id = id;
-        this.name = name;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.middleName = middleName;
         this.age = age;
+        this.dateOfBirth = dateOfBirth;
     }
     public int getId() {
         return id;
     }
-    public String getName() {
-        return name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
-    public void setName(String name) {
-        this.name = name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
-    public int getAge() {
-        return age;
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
     }
+
     public void setAge(int age) {
         this.age = age;
+    }
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
     @Override
     public String toString() {
         return "Person{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", middleName='" + middleName + '\'' +
                 ", age=" + age +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
                 '}';
     }
 }
