@@ -1,5 +1,5 @@
 //v1
-package model;
+package com.keitaproject.Lesson1.model;
 public class Person {
     private int id;
     private String name;
