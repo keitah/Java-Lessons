@@ -1,6 +1,6 @@
 //v1
-package storage;
-import model.Person;
+package com.keitaproject.Lesson1.storage;
+import com.keitaproject.Lesson1.model.Person;
 import java.util.List;
 public interface PersonStorageInterface {
     void addPerson(Person person);
