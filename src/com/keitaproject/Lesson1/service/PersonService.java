@@ -1,7 +1,7 @@
 //v1
-package service;
-import storage.PersonStorage;
-import storage.PersonStorageInterface;
+package com.keitaproject.Lesson1.service;
+import com.keitaproject.Lesson1.storage.PersonStorage;
+import com.keitaproject.Lesson1.storage.PersonStorageInterface;
 import model.Person;
 import java.util.List;
 public class PersonService implements PersonServiceInterface {
