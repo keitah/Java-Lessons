@@ -1,6 +1,6 @@
-package controller;
-import service.PersonService;
-import service.PersonServiceInterface;
+package com.keitaproject.Lesson1.controller;
+import com.keitaproject.Lesson1service.PersonService;
+import com.keitaproject.Lesson1service.PersonServiceInterface;
 import java.util.Scanner;
 public class Main {
     private static Scanner scanner = new Scanner(System.in);
