@@ -1,5 +1,5 @@
-//v1
-package com.keitaproject.Lesson1.com.keitaproject.Lesson1.storage;
+//v1.01
+package com.keitaproject.Lesson1.storage;
 import com.keitaproject.Lesson1.model.Person;
 import java.util.ArrayList;
 import java.util.List;

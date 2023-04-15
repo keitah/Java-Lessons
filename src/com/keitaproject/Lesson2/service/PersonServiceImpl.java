@@ -2,19 +2,18 @@ package com.keitaproject.Lesson2.service;
 import com.keitaproject.Lesson2.model.Person;
 import com.keitaproject.Lesson2.storage.PersonStorage;
 import java.util.List;
-
 public class PersonServiceImpl implements PersonService {
-    private PersonStorage personStorage;
+    private final PersonStorage personStorage;
     public PersonServiceImpl(PersonStorage personStorage) {
         this.personStorage = personStorage;
     }
     @Override
-    public void add(String name, int age) {
-        personStorage.add(name, age);
+    public void add(String firstName, String lastName, String middleName, int age, String dateOfBirth) {
+        personStorage.add(firstName, lastName, middleName, age, dateOfBirth);
     }
     @Override
-    public void update(int id, String name, int age) {
-        personStorage.update(id, name, age);
+    public void update(int id, String firstName, String lastName, String middleName, int age, String dateOfBirth) {
+        personStorage.update(id, firstName, lastName, middleName, age, dateOfBirth);
     }
     @Override
     public void delete(int id) {
@@ -25,7 +24,7 @@ public class PersonServiceImpl implements PersonService {
         return personStorage.list();
     }
     @Override
-    public List<Person> search(String name) {
-        return personStorage.search(name);
+    public List<Person> searchById(int id) {
+        return personStorage.searchById(id);
     }
 }
