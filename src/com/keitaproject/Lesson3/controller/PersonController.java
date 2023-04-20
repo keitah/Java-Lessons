@@ -144,19 +144,27 @@ public class PersonController {
         }
     }
     private void search() {
-        scanner.nextLine();
-        System.out.println("Введите id пользователя для поиска:");
-        String id = scanner.nextLine();
         try {
-            List<Person> searchResult = personService.searchById(Integer.parseInt(id));
-            if (searchResult.isEmpty()) {
-                System.out.println("Такого пользователя не существует или список пользователей пустой");
+            List<Person> foundPersons = personService.list();
+            if (foundPersons.isEmpty()) {
+                System.out.println("Список пользователей пуст!");
             } else {
-                System.out.println("Ваш пользователь ниже:");
-                searchResult.forEach(System.out::println);
+                List<Person> persons = personService.findAll();
+                int maxId = persons.size();
+                scanner.nextLine();
+                System.out.println("Введите id записи для поиска (от 1 до " + maxId + "):");
+                String id = scanner.nextLine();
+                foundPersons = personService.searchById(Integer.parseInt(id));
+                if (foundPersons.isEmpty()) {
+                    System.out.println("Пользователь не найден");
+                } else {
+                    foundPersons.forEach(System.out::println);
+                }
             }
         } catch (NumberFormatException e) {
-            System.out.println("Неверный формат id пользователя");
+            System.out.println("Ошибка: некорректный id пользователя");
+        } catch (Exception e) {
+            System.out.println("Ошибка: " + e.getMessage());
         }
     }
 }
